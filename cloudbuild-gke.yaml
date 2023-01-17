@@ -1,8 +1,8 @@
-#https://source.developers.google.com/p/gcp-devops-338510/r/repo-5
+#https://source.developers.google.com/p/alert-flames-286515/r/github_rjones18_gcp-kubernetes-python-app
 
 steps:
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://source.developers.google.com/p/gcp-devops-338510/r/repo-5']
+  args: ['clone', 'https://source.developers.google.com/p/alert-flames-286515/r/github_rjones18_gcp-kubernetes-python-app']
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build','-t',  'gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}', '.']
@@ -18,10 +18,10 @@ steps:
   - 'deployment/cicd-app-1'
   - 'runimage-sha256-1=gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}'
   env : 
-  - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-b'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cicd-cluster'
 
 substitutions:
-  _PROJECT_ID : gcp-devops-338510
+  _PROJECT_ID : alert-flames-286515
   _CINAME : gke-image
-  _VERSION : v3.0
+  _VERSION : v1.0
