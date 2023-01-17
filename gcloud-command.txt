@@ -1,0 +1,1 @@
+gcloud container clusters create cicd-cluster --machine-type=g1-small --num-nodes=3 --zone=us-central1-a
